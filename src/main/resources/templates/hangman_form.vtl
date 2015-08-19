@@ -1,21 +1,22 @@
 <html>
   <head>
     <h1>Hangman!</h1>
+
   </head>
   <div>
-  <form action='/tasks' method='post'>
+  <form action='/' method='get'>
   <body>
+    <p>Here is your letter guess:</p>
+    $letter
+
     <p>Here is your word:</p>
-    generateWord()
-    //computer displays word to user at start of play
+    $word
+
     <p>Guess a letter:</p>
-      <label for="letter">Task Description</label>
+      <label for="letter">Enter a Letter</label>
       <input id="letter" name="letter" type="text">
       <br>
       <button type="submit" class="btn btn-info">Guess letter</button>
-
-
-
 
 </div>
     </form>

@@ -6,14 +6,19 @@ import static spark.Spark.*;
 import java.util.Random;
 
 public class Hangman {
-  private String mWord;
-  private String mGuess;
+  private static String mWord;
+  private static String mDashWord;
+  private String mLetter;
   //private Array<int>[] mLettersGuessed =
   public static Random rand = new Random();
 
 
-  public Hangman(String word) {
-    mWord = word;
+  public Hangman() {
+    mWord = generateWord();
+  }
+
+  public String getChosenWord(){
+    return mWord;
   }
 
 
@@ -46,12 +51,23 @@ public class Hangman {
 // // fill in dashedWord with letters that match mWord
 // }
 //
-//  char [] wordChar = mWord.toCharArray();
-//
-//  for (int i = 0; i < word.length(); i++) {
-//             if ("......".contains(String.valueOf(wordChar[i]))){
-//             wordChar[i] = '_';
-//             }
+  public static String dashWord() {
+   char [] wordChar = mWord.toCharArray();
+
+   for (int i = 0; i < mWord.length(); i++) {
+      wordChar[i] = '_';
+    }
+    String dashedWord = new String(wordChar);
+    return dashedWord;
+  }
+
+public static String changeDashWordAfterGuess(){
+
+  return "";
+}
+
+
+
 //
 //   public Guess() {
 //     mGuess = guess;
